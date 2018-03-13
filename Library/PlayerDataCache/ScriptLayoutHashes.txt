@@ -280,3 +280,12 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
+1802df0c587099fd3895470c625ed810 Assembly-CSharp.dll:.SpatialMapping
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TapToPlaceParent
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnderworldSound
+e611f0bfab75b2af0aa9edf1eeb6314c Assembly-CSharp.dll:.Interpolator
+dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.AnimationSpeed
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnderworldReset
+cc7d22919b8a0916251b68c80b9c488b Assembly-CSharp.dll:.Fitbox
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GazeGestureManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WorldCursor

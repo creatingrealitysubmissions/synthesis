@@ -575,11 +575,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: MixedReality100
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 0081dda0ebd9d401
   metroApplicationDescription: MixedReality100
   wsaImages: {}
   metroTileShortName: 

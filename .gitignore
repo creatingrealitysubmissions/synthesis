@@ -6,9 +6,16 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+App2/
+App3/
+App4/
 App/
 Temp/
+Library/
+UnityPackageManager/
+UWP/
+Assets/HoloToolkit
+Assets/Holograms
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

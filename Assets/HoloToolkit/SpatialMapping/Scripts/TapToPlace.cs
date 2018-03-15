@@ -28,11 +28,15 @@ namespace HoloToolkit.Unity.SpatialMapping
         [Tooltip("Specify the parent game object to be moved on tap, if the immediate parent is not desired.")]
         public GameObject ParentGameObjectToPlace;
 
-        public GameObject cube1;
+        public List<GameObject> cubeArray;
+        public GameObject cube1, cube2, cube3, cube4, cube5, cube6, cube7;
 
-        public float globalH;
-        public float globalS;
-        public float globalV;
+        public float globalr;
+        public float globalg;
+        public float globalb;
+
+        public GameObject particleCursor;
+
         public webCamtexture webCamtextureScript;
         public GameObject target;
 
@@ -62,6 +66,15 @@ namespace HoloToolkit.Unity.SpatialMapping
 
         protected virtual void Start()
         {
+            cubeArray = new List<GameObject>();
+            cubeArray.Add(cube1);
+            cubeArray.Add(cube2);
+            cubeArray.Add(cube3);
+            cubeArray.Add(cube4);
+            cubeArray.Add(cube5);
+            cubeArray.Add(cube6);
+            cubeArray.Add(cube7);
+
             Debug.Log("Is Being Placed on start" + IsBeingPlaced.ToString());
             if (PlaceParentOnTap)
             {
@@ -113,9 +126,11 @@ namespace HoloToolkit.Unity.SpatialMapping
         protected virtual void Update()
         {
             if (!IsBeingPlaced) { return; }
-            //Transform cameraTransform = CameraCache.Main.transform;
+           Transform cameraTransform = CameraCache.Main.transform;
 
-           // Vector3 placementPosition = GetPlacementPosition(cameraTransform.position, cameraTransform.forward, DefaultGazeDistance);
+           Vector3 placementPosition = GetPlacementPosition(cameraTransform.position, cameraTransform.forward, DefaultGazeDistance);
+
+           particleCursor.transform.position = placementPosition;
 
             //if (UseColliderCenter)
             //{
@@ -147,18 +162,114 @@ namespace HoloToolkit.Unity.SpatialMapping
             //HandlePlacement();
             webCamtextureScript = target.GetComponent<webCamtexture>();
             webCamtextureScript.Start();
-            globalH = webCamtextureScript.h;
-            globalS = webCamtextureScript.s;
-            globalV = webCamtextureScript.v;
+            globalr = (webCamtextureScript.r);
+            globalg = (webCamtextureScript.g);
+            globalb = (webCamtextureScript.b);
 
             Debug.Log("on input clicked!!!");
             Debug.Log("Is Being Placed on input click"+IsBeingPlaced.ToString());
             ToggleSpatialMesh();
 
-            Debug.Log("On Input Clicked HSV Value = (" + globalH + ", " + globalS + ", " + globalV + ") ");
+            Debug.Log("On Input Clicked RGB Value = (" + globalr + ", " + globalg + ", " + globalb + ") ");
+
+            //if (globalr < 180)
+            //{
+            //    globalr = 0;
+            //}
+            //else
+            //{
+            //    globalr = 255;
+            //}
+            //if (globalG < 100)
+            //{
+            //    globalg = 0;
+            //}
+            //else
+            //{
+            //    globalg = 255;
+            //}
+            //if (globalb < 150)
+            //{
+            //    globalb = 0;
+            //}
+            //else
+            //{
+            //    globalb = 255;
+            //}
+
+            //Debug.Log("On Input Clicked RGB Thresholded Value = (" + globalr + ", " + globalg + ", " + globalb + ") ");
+
             Transform cameraTransform = CameraCache.Main.transform;
             Vector3 placementPosition = GetPlacementPosition(cameraTransform.position, cameraTransform.forward, DefaultGazeDistance);
-            Instantiate(cube1, placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+
+            //if (globalr == 255 && globalg == 255 && globalb == 255)
+            //{
+            //    //color creamy white
+            //    Instantiate(cubeArray[0], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+            //else if (globalr == 255 && globalg == 255 && globalb == 0)
+            //{
+            //    //color orange yellow etc tingy tangy
+            //    Instantiate(cubeArray[1], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+
+            //else if (globalr == 255 && globalg == 0 && globalb == 255)
+            //{
+            //    //color magenta pink poppy red
+            //    Instantiate(cubeArray[2], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+            //////Need to design
+            //else if (globalr == 255 && globalg == 0 && globalb == 0)
+            //{
+            //    //color 
+            //    Instantiate(cubeArray[3], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+
+            //else if (globalr == 255 && globalg == 255 && globalb == 0)
+            //{
+            //    //color orange yellow etc tingy tangy
+            //    Instantiate(cubeArray[4], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+            //else if (globalr == 0 && globalg == 255 && globalb == 0)
+            //{
+            //    //color greenish cyan etc
+            //    Instantiate(cubeArray[5], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+            //else if (globalr == 0 && globalg == 0 && globalb == 0)
+            //{
+            //    //color  blakish
+            //    Instantiate(cubeArray[6], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+
+
+            ////////////Not to include may be 
+            //else if (globalr == 0 && globalg == 255 && globalb == 0)
+            //{
+            //    //color greenish cyan etc
+            //    Instantiate(cubeArray[7], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+            //else {
+            //    Debug.Log("Nothing Matched!");
+            //    Instantiate(cubeArray[7], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //}
+
+
+            if(globalr<0.1f)
+                Instantiate(cubeArray[0], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else if(globalr > 0.1f && globalr<0.2f)
+                Instantiate(cubeArray[1], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else if (globalr > 0.2f && globalr < 0.25f)
+                Instantiate(cubeArray[2], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else if (globalr > 0.25f && globalr < 0.3f)
+                Instantiate(cubeArray[3], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else if (globalr > 0.3f && globalr < 0.35f)
+                Instantiate(cubeArray[4], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else if (globalr > 0.35f && globalr < 0.4f)
+                Instantiate(cubeArray[5], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            else
+                Instantiate(cubeArray[6], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
+            //else if (globalR > 0.45f && globalR < 0.5f)
+            //   Instantiate(cubeArray[2], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
 
             //this.transform.parent = GameObject.Find("SceneContent");
             AttachWorldAnchor();

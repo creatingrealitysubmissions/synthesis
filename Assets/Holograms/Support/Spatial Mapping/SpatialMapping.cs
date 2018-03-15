@@ -20,7 +20,7 @@ public class SpatialMapping : MonoBehaviour {
     // The layer to use for spatial mapping collisions.
     private int physicsLayer = 31;
 
-    // Handles rendering of spatial mapping meshes.
+    // Handles rendering of spatial mapping meshes
     private SpatialMappingRenderer spatialMappingRenderer;
 
     // Creates/updates environment colliders to work with physics.

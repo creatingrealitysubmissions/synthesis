@@ -203,6 +203,7 @@ MonoBehaviour:
   globalr: 0
   globalg: 0
   globalb: 0
+  particleCursor: {fileID: 0}
   webCamtextureScript: {fileID: 0}
   target: {fileID: 0}
   IsBeingPlaced: 1

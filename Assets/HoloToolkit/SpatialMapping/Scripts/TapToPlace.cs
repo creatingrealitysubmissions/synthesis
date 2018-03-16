@@ -256,15 +256,16 @@ namespace HoloToolkit.Unity.SpatialMapping
 
             if(globalr<0.1f)
                 Instantiate(cubeArray[0], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
-            else if(globalr > 0.1f && globalr<0.2f)
+                
+            else if (globalr >= 0.1f && globalr<0.2f)
                 Instantiate(cubeArray[1], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
-            else if (globalr > 0.2f && globalr < 0.25f)
+            else if (globalr >= 0.2f && globalr < 0.25f)
                 Instantiate(cubeArray[2], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
-            else if (globalr > 0.25f && globalr < 0.3f)
+            else if (globalr >= 0.25f && globalr < 0.3f)
                 Instantiate(cubeArray[3], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
-            else if (globalr > 0.3f && globalr < 0.35f)
+            else if (globalr >= 0.3f && globalr < 0.35f)
                 Instantiate(cubeArray[4], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
-            else if (globalr > 0.35f && globalr < 0.4f)
+            else if (globalr >= 0.35f && globalr < 0.4f)
                 Instantiate(cubeArray[5], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
             else
                 Instantiate(cubeArray[6], placementPosition, Quaternion.Euler(0, cameraTransform.localEulerAngles.y, 0));
@@ -280,7 +281,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
         IEnumerator RemoveMesh()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             IsBeingPlaced = !IsBeingPlaced;
             Debug.Log("Is Being Placed on Remove Mesh" + IsBeingPlaced.ToString());
             ToggleSpatialMesh();

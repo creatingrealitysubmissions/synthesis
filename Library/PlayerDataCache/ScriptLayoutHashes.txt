@@ -1,4 +1,5 @@
 Metro
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ParticleColorChanger
 7abde016883951c4ca4e7c44ce6adb2c Assembly-CSharp.dll:HoloToolkit.Unity.SceneLauncher
 c435bd06b74bbebac563a6d81dae369c Assembly-CSharp.dll:HoloToolkit.Unity.CanvasHelper
 d0af11b885cc70f37c0c734e399f40b4 Assembly-CSharp.dll:HoloToolkit.Unity.UX.Bezier

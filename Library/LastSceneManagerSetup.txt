@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Holograms/Main.unity
+- path: Assets/Synthesis/SpatialMapping/Scenes/TapToPlace.unity
   isLoaded: 1
   isActive: 1

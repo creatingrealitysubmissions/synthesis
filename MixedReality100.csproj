@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Extras\SShot.cs" />
     <Compile Include="Assets\Holograms\Support\AniCrane\AnimationSpeed.cs" />
     <Compile Include="Assets\Holograms\Support\Fitbox\Fitbox.cs" />
     <Compile Include="Assets\Holograms\Support\Fitbox\Interpolator.cs" />
@@ -683,11 +684,20 @@
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UICollection.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityScaler.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\UsabilityUtilities.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\ParticleColorChanger.cs" />
+    <Compile Include="Assets\Scripts\destroyGameObject.cs" />
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
     <Compile Include="Assets\Scripts\GazeGestureManager.cs" />
     <Compile Include="Assets\Scripts\GestureAction.cs" />
     <Compile Include="Assets\Scripts\ObjectCommands.cs" />
     <Compile Include="Assets\Scripts\ObjectSounds.cs" />
     <Compile Include="Assets\Scripts\PhotoCaptureTest.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scripts\Rotater.cs" />
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
     <Compile Include="Assets\Scripts\TapToPlaceParent.cs" />
     <Compile Include="Assets\Scripts\webCamtexture.cs" />
     <Compile Include="Assets\Scripts\WorldCursor.cs" />

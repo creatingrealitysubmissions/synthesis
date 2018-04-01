@@ -9,7 +9,13 @@ public class webCamtexture : MonoBehaviour
 
     PhotoCapture photoCaptureObject = null;
     Texture2D targetTexture = null;
+<<<<<<< HEAD
     public float h, s, v;
+=======
+    public float r, g, b;
+
+    private int width, height;
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
     // Use this for initialization
     public void Start()
     {
@@ -25,6 +31,12 @@ public class webCamtexture : MonoBehaviour
             cameraParameters.cameraResolutionHeight = cameraResolution.height;
             cameraParameters.pixelFormat = CapturePixelFormat.BGRA32;
 
+<<<<<<< HEAD
+=======
+            width = cameraResolution.width;
+            height = cameraResolution.height;
+
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
             // Activate the camera
             photoCaptureObject.StartPhotoModeAsync(cameraParameters, delegate (PhotoCapture.PhotoCaptureResult result) {
                 // Take a picture
@@ -51,6 +63,7 @@ public class webCamtexture : MonoBehaviour
             // in the reverse order.
             int stride = 4;
             float denominator = 1.0f / 255.0f;
+<<<<<<< HEAD
             float r = 0; float g = 0; float b = 0;
             int counter = 0;
             for (int i = imageBufferList.Count - 1; i >= 0; i -= stride)
@@ -66,10 +79,41 @@ public class webCamtexture : MonoBehaviour
             Debug.Log("Color Array"+ r.ToString());
 
             // Now we could do something with the array such as texture.SetPixels() or run image processing on the list
+=======
+            List<Color> colorArray = new List<Color>();
+            for (int i = imageBufferList.Count - 1; i >= 0; i -= stride)
+            {
+                float a = (int)(imageBufferList[i - 0]) * denominator;
+                float r = (int)(imageBufferList[i - 1]) * denominator;
+                float g = (int)(imageBufferList[i - 2]) * denominator;
+                float b = (int)(imageBufferList[i - 3]) * denominator;
+
+                colorArray.Add(new Color(r, g, b, a));
+            }
+
+
+            // Now we could do something with the array such as texture.SetPixels() or run image processing on the list
+            Debug.Log("Color Array"+ r.ToString());
+
+            int counter = 0;
+            r = 0; g = 0; b = 0;
+            for (int w = (width / 2) - 50; w < ((width) / 2) + 50; w++)
+            {
+                for (int hi = (height / 2) - 50; hi < ((height) / 2) + 50; hi++)
+                {
+                    int index = w * height + hi;
+                    counter++;
+                    r += colorArray[index].r;
+                    g += colorArray[index].g;
+                    b += colorArray[index].b;
+                }
+            }
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
 
             r /= counter;
             g /= counter;
             b /= counter;
+<<<<<<< HEAD
 
             Color hsvColor, rgbColor;
             rgbColor = new Color(r, g, b, 1);
@@ -84,6 +128,27 @@ public class webCamtexture : MonoBehaviour
 
             }
             Debug.Log("Current HSV = (" + h.ToString() + ", " + s.ToString() + ", " + v.ToString() + ")");
+=======
+            // Now we could do something with the array such as texture.SetPixels() or run image processing on the list
+
+            //r /= counter;
+            //g /= counter;
+            //b /= counter;
+
+            Color rgbColor;
+            rgbColor = new Color(r, g, b, 1);
+
+            //Color.RGBToHSV(rgbColor, out h, out s, out v);
+            //Color32[] pix = targetTexture.GetPixels32();
+            //for (int i = 0; i < pix.Length; i++)
+            //{
+            //    pix[i].r = (byte)(r * 255);
+            //    pix[i].g = (byte)(g * 255);
+            //    pix[i].b = (byte)(b * 255);
+
+            //}
+            Debug.Log("Current RGB = (" + r.ToString() + ", " + g.ToString() + ", " + b.ToString() + ")");
+>>>>>>> ad4b97695cf144060bba5d0d8f4bd5496d26c81c
             //targetTexture.SetPixels32(pix);
             //targetTexture.Apply();
             //GetComponent<MeshRenderer>().material.mainTexture = targetTexture;

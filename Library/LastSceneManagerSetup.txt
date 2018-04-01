@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Synthesis/SpatialMapping/Scenes/TapToPlace.unity
-  isLoaded: 1
-  isActive: 1
